@@ -5,35 +5,55 @@ using namespace std;
 
 int main()
 {
-	//	Завдання
-	//		Розробити клас String, який в подальшому будемо використовувати для роботи з рядками.Клас повинен містити :
-	//	- Конструктор за замовчуванням, що дозволяє створити
-	//		рядок довжиною 80 символів;
-	//	- Конструктор, що дозволяє створювати рядок довільного розміру;
-	//	- Конструктор, який створює рядок і ініціалізує його
-	//		рядком, отриманим від користувача.
-	//		Необхідно створити деструктор, а також використовувати механізми делегування конструкторів, якщо це
-	//		можливо.
-	//		Клас повинен містити методи для введення рядків з
-	//		клавіатури і виведення рядків на екран.Також потрібно
-	//		реалізувати статичну функцію - член, яка буде повертати
-	//		кількість створених об’єктів рядків
+	//char* test = new char[6] {'H', 'e', 'l', 'l','o', '\0'};
+	//MyString str1;
+	//cout << "str1: ";
+	//str1.print();
 
-	char* name = new char[6] {'H', 'e', 'l', 'l','o', '\0'};
-	MyString str1;
-	str1.print();
-
-	MyString str2(name);
-	str2.print();
+	//MyString str2(test);
+	//cout << "str2: ";
+	//str2.print();
+	//delete[]test;
 
 	MyString str3;
 	str3.input();
+	cout << "str3: ";
 	str3.print();
 
-	cout<<"Counter object: "<< str1.getCounterObject() << endl;
 
 
+	MyString str4;
+	str4.MyStrcpy(str3);	// копирование строк
+	cout << "str4_copyOf_str3: ";
+	str4.print();
 
+	cout << "Result of searching substring in MyString: ";
+	char* test2 = new char[4] { 'l', 'l', 'o', '\0'};
+	cout << str3.MyStrStr(test2)<<endl;	// поиск подстроки в строке
+	delete[]test2;
+
+	cout << endl << "Searching char in str." << endl;
+	MyString str5;
+	str5.input();
+	cout << "Enter char to search hes index in string: ";
+	char c;
+	cin >> c;
+	cout<<"char index: " << str5.MyChr(c)<<endl; // поиск символа в строке(индекс найденного символа, либо -1)
+
+	cout << "Strlen of last string: "<<	str5.MyStrLen()<<endl;	// возвращает длину строки
+
+	cout << "Concatenation: " << endl;
+	str4.MyStrCat(str5);		 // объединение строк
+	str4.print();
+
+	cout << "Enter char to del in last str: ";
+	cin >> c;
+	str4.MyDelChr(c);	// удаляет указанный символ 
+	str4.print();
+
+	cout << "Str cmp: "<<str4.MyStrCmp(str5)<<endl;	 // сравнение строк 
+	
+	//cout<<"Counter object: "<< str4.getCounterObject() << endl;
 
 	return 0;
 }
