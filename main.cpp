@@ -5,15 +5,17 @@ using namespace std;
 
 int main()
 {
-	//char* test = new char[6] {'H', 'e', 'l', 'l','o', '\0'};
+
 	//MyString str1;
 	//cout << "str1: ";
 	//str1.print();
 
+	//char* test = new char[6] {'H', 'e', 'l', 'l','o', '\0'};
 	//MyString str2(test);
+	//delete[]test;
 	//cout << "str2: ";
 	//str2.print();
-	//delete[]test;
+
 
 	MyString str3;
 	str3.input();
