@@ -152,6 +152,33 @@ int MyString::MyStrCmp(MyString& b)	 // сравнение строк
 		return 0;
 }
 
+MyString::operator int()
+{
+	return strlen(str);
+}
+
+char MyString::operator[](int ind)
+{
+	if (ind >= 0 && ind < size)
+	{
+		return str[ind];
+
+	}
+	return -1;
+}
+
+int MyString::operator()(char ch)
+{
+	for (int i = 0; i < strlen(str); i++)
+	{
+		if (str[i] == ch)
+		{
+			return i;
+		}
+	}
+	return -1;
+}
+
 
 
 

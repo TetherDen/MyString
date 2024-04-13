@@ -19,7 +19,10 @@ public:
 	void MyDelChr(char c); // удал€ет указанный символ 
 	int MyStrCmp(MyString& b); // сравнение строк 
 
-
+	operator int(); // ѕеретворенн€ до int повертаЇ довжину р€дка
+	char operator[](int ind);  // [] Ч повертаЇ елемент за вказаним ≥ндексом;
+	int operator()(char ch);
+	//()
 	static int getCounterObject();
 	~MyString();
 };
