@@ -1,6 +1,7 @@
 #pragma once
 class MyString
 {
+protected:
 	char* str;
 	int size;
 	static int counterObject;

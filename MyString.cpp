@@ -4,7 +4,7 @@ using namespace std;
 
 MyString::MyString()
 {
-	size = 80;
+	size = 0;
 	str = new char[size + 1];
 	str[size] = '\0';
 	counterObject++;
@@ -25,7 +25,7 @@ MyString::MyString(const char* str1)
 {
 	if (str1 != nullptr)
 	{
-		int size = strlen(str1);
+		size = strlen(str1);
 		str = new char[size + 1];
 		strcpy_s(str, size + 1, str1);
 		str[size] = '\0';   //  strcpy копирует с \0?
@@ -62,7 +62,7 @@ void MyString::print()
 
 void MyString::MyStrcpy(MyString& obj)  // копирование строк
 {
-	int size = strlen(obj.str);
+	size = strlen(obj.str);
 	if (str != nullptr)
 	{
 		delete[]str;
@@ -115,7 +115,7 @@ int MyString::MyStrLen()	// возвращает длину строки
 
 void MyString::MyStrCat(MyString& b)	 // объединение строк
 {
-	int size = strlen(str) + strlen(b.str);
+	size = strlen(str) + strlen(b.str);
 	MyString NewStr(size + 1);
 	strcpy_s(NewStr.str, strlen(str) + 1, str);
 	strcat_s(NewStr.str, size + 1, b.str);
